@@ -1,48 +1,70 @@
+set autoindent
+set expandtab
+set fileformats=unix,dos,mac
+set shiftwidth=4
+set showmatch
+set softtabstop=4
 set tabstop=8
-set shiftwidth=2
-set expandtab
+set ttyfast
+"set undolevels=0
+set visualbell
+set wrap
+set bg=dark
+colorscheme solarized
+syntax on
 
-map ~mai i#include<stdio.h><CR><CR>int main(int argc,char *argv[],char *envp[])<CR>{<CR><CR>}<CR><Esc>kka<Tab>
-map ~cmai i#include<iostream><CR><CR>using namespace std;<CR><CR>int main(int argc,char *argv[],char *envp[])<CR>{<CR><CR>return 0;<CR>}<CR><Esc>kka<Tab>
-map ~for ofor(int i=0; i; i++)<CR>{<CR>}<CR><Esc>kkkf;f;i
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set incsearch
-set hlsearch
-set expandtab
-set showcmd
-set ai
-set cindent
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-if !has("gui_running")
-    set t_Co=8
-    set t_Sf=^[[3%p1%dm
-    set t_Sb=^[[4%p1%dm
-endif
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-syntax enable
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'eparreno/vim-l9'
 
-highlight search term=standout ctermfg=0 ctermbg=3 guifg=black guibg=yellow
-highlight comment term=underline ctermfg=6 guifg=DarkCyan
+Plugin 'sravi-in/ctags.vim'
+Plugin 'sravi-in/cscope_macros.vim'
+Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'bling/vim-airline'
+"Plugin 'vim-scripts/FuzzyFinder'
 
-nmap gb /\.\.\/<CR>
-"nmap m  <C-d>
-"nmap q  <C-u>
-"nmap gf <C-f>
-"nmap gb <C-b>
-nmap mw <C-w>
-set bg=light
-let c_space_errors=1
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
+"Plugin 'szw/vim-tags'
+" plugin from http://vim-scripts.org/vim/scripts.html
 
-map + <Esc>:cn<CR>
-map - <Esc>:cp<CR>
-map <F2> :WMToggle<CR>      " map F2 to make WMToggle
-
-"for the ctags.vim plugin.
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 let g:ctags_path= "/usr/bin/ctags"
 let g:ctags_statusline=1
 let g:ctags_title=0
 let generate_tags=1
 
-"set nofsync
+let c_space_errors=1
+
+nmap mw <C-w>
+
+"highlight WhitespaceEOL ctermbg=red guibg=red
+"match WhitespaceEOL /\s\+$/
+
