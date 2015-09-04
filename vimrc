@@ -29,13 +29,12 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'eparreno/vim-l9'
 
 Plugin 'sravi-in/ctags.vim'
 Plugin 'sravi-in/cscope_macros.vim'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "Plugin 'bling/vim-airline'
 "Plugin 'vim-scripts/FuzzyFinder'
 
