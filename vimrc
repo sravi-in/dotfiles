@@ -1,18 +1,3 @@
-set autoindent
-set expandtab
-set fileformats=unix,dos,mac
-set shiftwidth=4
-set showmatch
-set softtabstop=4
-set tabstop=8
-set ttyfast
-"set undolevels=0
-set visualbell
-set wrap
-set bg=dark
-colorscheme solarized
-syntax on
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -25,21 +10,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'sravi-in/ctags.vim'
 Plugin 'sravi-in/cscope_macros.vim'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'bling/vim-airline'
-"Plugin 'vim-scripts/FuzzyFinder'
-
-"Plugin 'szw/vim-tags'
-" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,4 +42,20 @@ nmap mw <C-w>
 
 "highlight WhitespaceEOL ctermbg=red guibg=red
 "match WhitespaceEOL /\s\+$/
+
+set t_Co=16
+set bg=dark
+colorscheme solarized
+syntax on
+
+set autoindent
+set expandtab
+set fileformats=unix,dos,mac
+set shiftwidth=4
+set showmatch
+set softtabstop=4
+set tabstop=8
+set ttyfast
+set visualbell
+set wrap
 
